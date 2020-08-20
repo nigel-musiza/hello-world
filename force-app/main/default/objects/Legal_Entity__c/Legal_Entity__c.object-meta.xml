@@ -1,0 +1,588 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fieldSets>
+        <fullName>HierarchyLegalEntity</fullName>
+        <description>Fields queried in the AccountHierarchyCtrl class</description>
+        <displayedFields>
+            <field>Id</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Name</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Organisation__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>AUM__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>HierarchyLegalEntity</label>
+    </fieldSets>
+    <fields>
+        <fullName>AML_Checks_Completed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Flags that an AML check has been completed</description>
+        <externalId>false</externalId>
+        <label>AML Checks Completed</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>AUM_Trend__c</fullName>
+        <description>Movement of AUM over the past 30 Days</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Movement of AUM over the past 30 Days</inlineHelpText>
+        <label>AUM Trend</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Not Enough Data</fullName>
+                    <default>true</default>
+                    <label>Not Enough Data</label>
+                </value>
+                <value>
+                    <fullName>Strong Positive</fullName>
+                    <default>false</default>
+                    <label>Strong Positive</label>
+                </value>
+                <value>
+                    <fullName>Positive</fullName>
+                    <default>false</default>
+                    <label>Positive</label>
+                </value>
+                <value>
+                    <fullName>Neutral</fullName>
+                    <default>false</default>
+                    <label>Neutral</label>
+                </value>
+                <value>
+                    <fullName>Negative</fullName>
+                    <default>false</default>
+                    <label>Negative</label>
+                </value>
+                <value>
+                    <fullName>Strong Negative</fullName>
+                    <default>false</default>
+                    <label>Strong Negative</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>AUM__c</fullName>
+        <description>Identifiable Client AUM for in scope asset classes aggregated across all products and associated agreements for the current period (month)
+See associated related lists for more detail of flows and holding for past 12 months</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Identifiable Client AUM for in scope asset classes aggregated across all products and associated agreements for the current period (month).
+
+See associated related lists for more detail of flows and holding for past 12 months</inlineHelpText>
+        <label>Current</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Actual_Revenue_YTD__c</fullName>
+        <description>Sum of the actual revenue received in the current Fiscal Year  based on  actual AUM at end of each month</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Sum of the actual revenue received in the current Fiscal Year  based on  actual AUM at end of each month</inlineHelpText>
+        <label>Actual Revenue YTD</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Basis_of_Classification__c</fullName>
+        <description>A custom picklist field used by the Compliance team to classify clients.</description>
+        <externalId>false</externalId>
+        <label>Basis of Classification</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Authorised/ Regulated Entity</fullName>
+                    <default>false</default>
+                    <label>Authorised/ Regulated Entity</label>
+                </value>
+                <value>
+                    <fullName>Large Undertaking</fullName>
+                    <default>false</default>
+                    <label>Large Undertaking</label>
+                </value>
+                <value>
+                    <fullName>Government/ Public body managing public debt/Central Bank/ International/ Supranational Organisation</fullName>
+                    <default>false</default>
+                    <label>Government/ Public body managing public debt/Central Bank/ International/ Supranational Organisation</label>
+                </value>
+                <value>
+                    <fullName>Another Institutional Investor</fullName>
+                    <default>false</default>
+                    <label>Another Institutional Investor</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Business_Address__c</fullName>
+        <externalId>false</externalId>
+        <label>Business Address</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Business_City__c</fullName>
+        <externalId>false</externalId>
+        <label>Business City</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Business_Country__c</fullName>
+        <externalId>false</externalId>
+        <label>Business Country</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Business_County_State__c</fullName>
+        <externalId>false</externalId>
+        <label>Business County / State</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Business_Zip_Post_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Business Zip / Post Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Change_since_Last_Period__c</fullName>
+        <description>Percentage change of AUM since last period. If the value is null or 0; 0% is returned</description>
+        <externalId>false</externalId>
+        <formula>IF(NOT ISBLANK(AUM__c) &amp;&amp; NOT ISBLANK(Last_Period_AUM__c),
+    IF(AUM__c &gt;0 &amp;&amp; (Last_Period_AUM__c-1) &gt;0, 
+       AUM__c  / Last_Period_AUM__c -1,
+       0
+      ),
+    0
+  )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>The % change in this month&apos;s Client AUM c.f. last month.</inlineHelpText>
+        <label>Change Since Start of Year (%)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Classification__c</fullName>
+        <description>A custom picklist field used by the Compliance team to classify clients.</description>
+        <externalId>false</externalId>
+        <label>Classification</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Elective Professional Client</fullName>
+                    <default>false</default>
+                    <label>Elective Professional Client</label>
+                </value>
+                <value>
+                    <fullName>Eligible Counterparty</fullName>
+                    <default>false</default>
+                    <label>Eligible Counterparty</label>
+                </value>
+                <value>
+                    <fullName>Per Se Professional Client</fullName>
+                    <default>false</default>
+                    <label>Per Se Professional Client</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Client_AUM_Amount_Annualized_Revenue__c</fullName>
+        <description>Returns the difference between the Current Client AUM (Annualized Revenue) and Client AUM at SoY (Annualized Revenue).</description>
+        <externalId>false</externalId>
+        <formula>Net_Management_Fee__c - Last_Period_NMF__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Returns the difference between the Current Client AUM (Annualized Revenue) and Client AUM at SoY (Annualized Revenue).</inlineHelpText>
+        <label>Client AUM Amount (Annualized Revenue)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Client_AUM_Amount__c</fullName>
+        <description>Returns the difference between the Current Client AUM and Client AUM at SoY.</description>
+        <externalId>false</externalId>
+        <formula>AUM__c - Last_Period_AUM__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Returns the difference between the Current Client AUM and Client AUM at SoY.</inlineHelpText>
+        <label>Client AUM Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Current_AUM_EOP_Date__c</fullName>
+        <description>The last day of the month in which Current AUM values pertain. Populated at time of upload of Client AUM values to Salesforce</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The last day of the month in which Current AUM values pertain. Populated at time of upload of Client AUM values to Salesforce</inlineHelpText>
+        <label>Current AUM EOP Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Date_Notified__c</fullName>
+        <description>A custom date field required by the Compliance team.</description>
+        <externalId>false</externalId>
+        <label>Date Notified</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Date_of_Classification__c</fullName>
+        <description>A custom date field used by the Compliance team.</description>
+        <externalId>false</externalId>
+        <label>Date of Classification</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Full_Legal_Name__c</fullName>
+        <description>The full registered legal name of the legal entity</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The full registered legal name of the legal entity</inlineHelpText>
+        <label>Full Legal Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Last_AML_Review__c</fullName>
+        <description>The date of the last AML review</description>
+        <externalId>false</externalId>
+        <label>Last AML Review</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Last_Period_AUM__c</fullName>
+        <description>Identifiable Client AUM for in scope asset classes aggregated across all products and agreements as at the Start of Current Fiscal Year
+See associated related lists for more detail of flows and holding for past 12 months</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Identifiable Client AUM for in scope asset classes aggregated across all products and agreements as at the Start of Current Fiscal Year
+See associated related lists for more detail of flows and holding for past 12 months</inlineHelpText>
+        <label>Start of Year</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Last_Period_NMF__c</fullName>
+        <description>Total Run Rate Revenue (Gross) as at Start of Year
+Calculation by Fishtank tbc: Start of Year AUM (per product) for the period multiplied by the product AMC (i.e. a 12-month forward projection of revenue).</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Total Run Rate Revenue (Gross) as at Start of Year
+Calculation by Fishtank tbc: Start of Year AUM (per product) for the period multiplied by the product AMC (i.e. a 12-month forward projection of revenue).</inlineHelpText>
+        <label>Start of Year (Annualized Revenue)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>LegacyId__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <description>Used for data migration</description>
+        <externalId>true</externalId>
+        <label>IdSfOld</label>
+        <length>18</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Legal_Entity_Code__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>Unique identifier, used for associating Agreements to Legal Entities</description>
+        <externalId>true</externalId>
+        <label>Legal Entity Code</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>MDM_Auto_ID__c</fullName>
+        <description>MDM Auto generated field value</description>
+        <displayFormat>{000000}</displayFormat>
+        <externalId>false</externalId>
+        <inlineHelpText>MDM Auto generated field value</inlineHelpText>
+        <label>MDM Auto ID</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>AutoNumber</type>
+    </fields>
+    <fields>
+        <fullName>MDM_ID__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <description>A unique ID generated by Salesforce as an interim identifier.</description>
+        <externalId>true</externalId>
+        <inlineHelpText>A unique ID generated by Salesforce as an interim identifier.</inlineHelpText>
+        <label>MDM ID</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>NMF_Change_Since_Last_Period__c</fullName>
+        <description>The change in this Client AUM (expressed as annualised revenue) since the start of the current Fiscal Year</description>
+        <externalId>false</externalId>
+        <formula>IF(NOT ISBLANK(Net_Management_Fee__c  ) &amp;&amp; NOT ISBLANK(Last_Period_NMF__c ),
+    IF(Net_Management_Fee__c  &gt;0 &amp;&amp; (Last_Period_NMF__c -1) &gt;0, 
+       Net_Management_Fee__c  / Last_Period_NMF__c -1,
+       0
+      ),
+    0
+  )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>The change in this Client AUM (expressed as annualised revenue) since the start of the current Fiscal Year</inlineHelpText>
+        <label>Annualized Revenue Change (%)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Net_Management_Fee__c</fullName>
+        <description>Client AUM for the latest month expressed as Annualised Revenue (Gross) 
+
+Calculation: Closing position AUM (per product) for the period multiplied by the product AMC (i.e. a 12-month forward projection of revenue)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Client AUM for the latest month expressed as Annualised Revenue (Gross) 
+
+Calculation: Closing position AUM (per product) for the period multiplied by the product AMC (i.e. a 12-month forward projection of revenue)</inlineHelpText>
+        <label>Current (Annualized Revenue)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Next_Review_Date__c</fullName>
+        <description>A custom date field required by the Compliance team.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Required for Elective Professional Clients only.</inlineHelpText>
+        <label>Next Review Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Organisation_Status__c</fullName>
+        <description>A custom text formula field used to display the related Organisation&apos;s Status value on the Legal Entity page layout.</description>
+        <externalId>false</externalId>
+        <formula>Text(Organisation__r.Status__c)</formula>
+        <label>Organisation Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Organisation__c</fullName>
+        <externalId>false</externalId>
+        <label>Organisation</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Legal Entities</relationshipLabel>
+        <relationshipName>Legal_Entities</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Sustainability_Checks_Complete__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Sustainability Checks Complete</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Legal Entity</label>
+    <listViews>
+        <fullName>All1</fullName>
+        <columns>NAME</columns>
+        <columns>Organisation__c</columns>
+        <columns>Net_Management_Fee__c</columns>
+        <columns>AUM__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>1 All Legal Entities</label>
+    </listViews>
+    <listViews>
+        <fullName>AllLegalEntities</fullName>
+        <columns>CREATED_DATE</columns>
+        <columns>NAME</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <columns>Next_Review_Date__c</columns>
+        <columns>Organisation__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>1 All Legal Entities</label>
+    </listViews>
+    <nameField>
+        <label>Legal Entity Name</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Legal Entities</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Organisation__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CREATEDBY_USER</customTabListAdditionalFields>
+        <customTabListAdditionalFields>UPDATEDBY_USER</customTabListAdditionalFields>
+        <customTabListAdditionalFields>LAST_UPDATE</customTabListAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>
